@@ -1,0 +1,22 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app
+
+runtime_config:
+  python_version: 3
+
+#[START env]
+env_variables:
+    # Replace user, password, database, and instance connection name with the values obtained
+    # when configuring your Cloud SQL instance.
+    GCLOUD: gcloud
+    SQLALCHEMY_DATABASE_URI: >-
+      mysql+pymysql://root:joshua3330300@/ctfd?unix_socket=/cloudsql/mcdx-219813:asia-east1:mcdx
+#[END env]
+
+#[START cloudsql_settings]
+# Replace project and instance with the values obtained  when configuring your
+# Cloud SQL instance.
+beta_settings:
+    cloud_sql_instances: mcdx-219813:asia-east1:mcdx
+#[END cloudsql_settings]

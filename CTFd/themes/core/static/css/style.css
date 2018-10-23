@@ -1,11 +1,11 @@
 
 html, body, .container {
     height: 100% !important;
-    font-family: 'star-wars-font',  sans-serif;/*'LatoOffline',*/
+    font-family: 'LatoOffline',  sans-serif;
 }
 
 h1, h2 {
-    font-family: 'star-wars-font', sans-serif; /*'RalewayOffline',*/
+    font-family: 'RalewayOffline', sans-serif;
     font-weight: 500;
     letter-spacing: 2px;
 }

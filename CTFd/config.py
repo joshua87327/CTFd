@@ -45,8 +45,11 @@ class Config(object):
 
     http://flask-sqlalchemy.pocoo.org/2.1/config/#configuration-keys
     '''
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:joshua3330300@35.200.201.0/ctfd?charset=uft8mb4'.format(os.path.dirname(os.path.abspath(__file__)))
-
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:joshua3330300@/ctfd?unix_socket=/cloudsql/mcdx-219813:asia-east1:mcdx?charset=uft8mb4'.format(os.path.dirname(os.path.abspath(__file__)))
+    SQLALCHEMY_POOL_SIZE = 10
+    SQLALCHEMY_POOL_TIMEOUT = 30
+    SQLALCHEMY_POOL_RECYCLE = 7200
+    SQLALCHEMY_RECORD_QUERIES = True
     '''
     SQLALCHEMY_TRACK_MODIFICATIONS is automatically disabled to suppress warnings and save memory. You should only enable
     this if you need it.
@@ -57,7 +60,7 @@ class Config(object):
     SESSION_TYPE is a configuration value used for Flask-Session. It is currently unused in CTFd.
     http://pythonhosted.org/Flask-Session/#configuration
     '''
-    SESSION_TYPE = "filesystem"
+    SESSION_TYPE = "sqlalchmey"
 
     '''
     SESSION_FILE_DIR is a configuration value used for Flask-Session. It is currently unused in CTFd.
@@ -152,7 +155,7 @@ class TestingConfig(Config):
     PRESERVE_CONTEXT_ON_EXCEPTION = False
     TESTING = True
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:joshua3330300@35.200.201.0/ctfd?charset=uft8mb4'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:joshua3330300@/ctfd?unix_socket=/cloudsql/mcdx-219813:asia-east1:mcdx?charset=uft8mb4'
     SERVER_NAME = 'localhost'
     UPDATE_CHECK = False
     CACHE_REDIS_URL = None

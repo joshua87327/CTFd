@@ -1,12 +1,12 @@
 html, body, .container {
-    font-family: 'Star_Jedi', sans-serif;
-    /*background-color: #FFD700;'Lato', 'LatoOffline'*/
+    font-family: 'Lato', 'LatoOffline', sans-serif;
+    /*background-color: #FFD700;*/
     color: #FFD700;
 }
 
 h1, h2 {
-    font-family: 'Star_Jedi', sans-serif;
-    font-weight: 500;/*'Raleway', 'RalewayOffline'*/
+    font-family: 'Raleway', 'RalewayOffline', sans-serif;
+    font-weight: 500;
     letter-spacing: 2px;
     color: #FFD700;
 }
@@ -46,7 +46,7 @@ table > thead > tr > td {
     color: #FFD700;
     border-radius: 0;
     text-align: center;
-    background-image: url("http://getwallpapers.com/wallpaper/full/e/6/0/16412.jpg");
+    background-image: url('themes/core/static/img/star.jpg');
 }
 
 .form-control {

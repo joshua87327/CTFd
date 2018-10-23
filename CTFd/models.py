@@ -56,19 +56,17 @@ class Challenges(db.Model):
     category = db.Column(db.String(80))
     type = db.Column(db.String(80))
     hidden = db.Column(db.Boolean)
-    stage = db.Column(db.Integer)
     __mapper_args__ = {
         'polymorphic_identity': 'standard',
         'polymorphic_on': type
     }
 
-    def __init__(self, name, description, value, category, stage, type='standard'):
+    def __init__(self, name, description, value, category, type='standard'):
         self.name = name
         self.description = description
         self.value = value
         self.category = category
         self.type = type
-	self.stage = stage
 
     def __repr__(self):
         return '<chal %r>' % self.name
